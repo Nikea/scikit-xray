@@ -385,7 +385,7 @@ def test_auto_find_center_rings(rgb_image):
 
     if rgb_image:
         image_shape = image.shape
-        image = np.reshape(image, newshape=[*image_shape, 1])
+        image = np.reshape(image, shape=[*image_shape, 1])
         image = np.broadcast_to(image, shape=[*image_shape, 3])
 
     center, image, radii = roi.auto_find_center_rings(image, sigma=20, no_rings=2)

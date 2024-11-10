@@ -40,7 +40,7 @@ from __future__ import absolute_import, division, print_function
 import logging
 
 import numpy as np
-from scipy.integrate import simps
+from scipy.integrate import simpson as simps
 from six.moves import zip
 
 from .fitting import fit_quad_to_peak
@@ -346,12 +346,6 @@ def integrate_ROI(x, y, x_min, x_max):
     accum = 0
     # integrate each region
     for bot, top in zip(bottom_indx, top_indx):
-        # Note: If an odd number of intervals is specified, then the
-        # even='avg' setting calculates and averages first AND last
-        # N-2 intervals using trapezoidal rule.
-        # If calculation speed become an issue, then consider changing
-        # setting to 'first', or 'last' in which case trap rule is only
-        # applied to either first or last N-2 intervals.
-        accum += simps(y[bot:top], x[bot:top], even="avg")
+        accum += simps(y[bot:top], x=x[bot:top])
 
     return accum

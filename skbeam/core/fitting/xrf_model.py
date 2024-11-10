@@ -1099,7 +1099,7 @@ class ModelSpectrum(object):
         """
 
         pars = self.mod.make_params()
-        result = self.mod.fit(spectrum, pars, x=channel_number, weights=weights, method=method, fit_kws=kwargs)
+        result = self.mod.fit(spectrum, pars, x=channel_number, weights=weights, method=method, **kwargs)
 
         return result
 

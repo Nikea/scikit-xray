@@ -90,7 +90,7 @@ def test_fit():
     MS = ModelSpectrum(param, elemental_lines)
     MS.assemble_models()
 
-    result = MS.model_fit(x, y, weights=1 / np.sqrt(y + 1), maxfev=200)
+    result = MS.model_fit(x, y, weights=1 / np.sqrt(y + 1), max_nfev=200)
 
     # check area of each element
     for k, v in six.iteritems(result.values):

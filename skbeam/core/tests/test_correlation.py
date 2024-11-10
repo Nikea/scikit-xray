@@ -258,7 +258,9 @@ def test_one_time_from_two_time():
     )
 
 
-@pytest.mark.skipif(int(np.__version__.split(".")[1]) > 14, reason="Test is numerically unstable")
+@pytest.mark.skipif(
+    tuple(map(int, np.__version__.split(".")[:2])) > (1, 14), reason="Test is numerically unstable"
+)
 def test_CrossCorrelator1d():
     """Test the 1d version of the cross correlator with these methods:
     -method='regular', no mask

@@ -70,7 +70,7 @@ def _dist(dims):
         shape = np.ones(len(dims), dtype=np.int64)
         shape[idx] = d
         vec = (np.arange(d) - d // 2) ** 2
-        vec = np.broadcast_to(np.reshape(vec, newshape=shape), dims)
+        vec = np.broadcast_to(np.reshape(vec, shape=shape), dims)
         dist_sum += vec
 
     return np.sqrt(dist_sum)

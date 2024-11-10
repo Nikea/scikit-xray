@@ -26,7 +26,6 @@ line_re = re.compile(".*?\n")
 
 
 class IPythonConsoleLexer(Lexer):
-
     """
     For IPython console output or doctests, such as:
 

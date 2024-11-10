@@ -5,6 +5,7 @@ Taken from seaborn project, which is turn was lightly
 modified from the mpld3 project.
 
 """
+
 from __future__ import division
 
 import glob
